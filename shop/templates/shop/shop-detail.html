@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<style>
+	img.cat {
+	  height: 600px;
+	  object-fit: scale-down;
+	}
+	.checked {
+		color: orange;
+	  }
+  	</style>
+	<div id="pageWrapper">
+
+		<main>
+			<!-- introBannerHolder -->
+			<section class="introBannerHolder d-flex w-100 bgCover" style="background-image: url({% static 'images/Capture2.png' %});">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 pt-lg-23 pt-md-15 pt-sm-10 pt-6 text-center">
+							<h1 class="headingIV fwEbold playfair mb-4">Our Serivces</h1>
+							<ul class="list-unstyled breadCrumbs d-flex justify-content-center">
+								<li class="mr-2"><a href="{% url 'home:home' %}">Home</a></li>
+								<li class="mr-2">/</li>
+								<li class="mr-2"><a href="{% url 'home:home' %}#services">Services</a></li>
+								<li class="mr-2">/</li>
+								<li class="active">{{ product.title }}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- twoColumns -->
+			<div class="twoColumns container pt-xl-23 pb-xl-20 pt-lg-20 pb-lg-20 py-md-16 py-10">
+				<div class="row mb-6">
+					<div class="col-12 col-lg-6 order-lg-1">
+						<!-- productSliderImage -->
+						<div class="productSliderImage mb-lg-0 mb-4">
+							<div>
+								<img src="{{ product.imgURL }}" alt="image description" class="img-fluid cat w-100">
+							</div>
+							<div>
+								<img src="{{ product.imgURL }}" alt="image description" class="img-fluid cat w-100">
+							</div>
+							<div>
+								<img src="{{ product.imgURL }}" alt="image description" class="img-fluid cat w-100">
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 order-lg-3">
+						<!-- productTextHolder -->
+						<div class="productTextHolder overflow-hidden">
+							<h2 class="fwEbold mb-2">{{ product.title }}</h2>
+							<p class="mb-5">{{ product.description }}</p>
+								<div class="holder overflow-hidden d-flex flex-wrap mb-6">
+									<input type="submit" class="btn btnTheme btnShop fwEbold text-white md-round py-3 px-4 py-md-3 px-md-4" value="More Info">
+								</div>
+							  </form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<section class="featureSec container overflow-hidden pt-xl-12 pb-xl-29 pt-lg-10 pb-lg-14 pt-md-8 pb-md-10 py-5">
+				<div class="row">
+					<!-- mainHeader -->
+					<header class="col-12 mainHeader mb-5 text-center">
+						<h1 class="headingIV playfair fwEblod mb-4">Related products</h1>
+					</header>
+				</div>
+			</section>
+
+			
+	</div>
+{% endblock content %}
